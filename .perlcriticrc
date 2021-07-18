@@ -1,0 +1,9 @@
+[-CodeLayout::RequireTidyCode]
+
+[-Documentation::PodSpelling]
+
+[-InputOutput::RequireBriefOpen]
+
+[-RegularExpressions::ProhibitComplexRegexes]
+
+[-ValuesAndExpressions::ProhibitMagicNumbers]

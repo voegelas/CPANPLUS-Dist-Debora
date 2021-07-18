@@ -1,0 +1,11 @@
+image: perl:latest
+
+before_script:
+  - cpanm --installdeps .
+
+test_job:
+  script:
+    - cpanm Devel::Cover
+    - cover -delete
+    - env HARNESS_PERL_SWITCHES=-MDevel::Cover prove -Ilib
+    - cover -select_re ^lib/
