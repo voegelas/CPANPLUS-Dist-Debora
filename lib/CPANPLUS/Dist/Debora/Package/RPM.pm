@@ -29,11 +29,12 @@ my %OBSOLETES_FOR = (
     'ack'                 => [qw(perl-App-Ack)],
     'App-Licensecheck'    => [qw(perl-App-Licensecheck)],
     'App-perlbrew'        => [qw(perl-App-perlbrew)],
+    'Mojolicious'         => [qw(perl-Test-Mojo)],
     'perl-ldap'           => [qw(perl-LDAP)],
     'Perl-Tidy'           => [qw(perltidy)],
     'TermReadKey'         => [qw(perl-TermReadKey)],
     'Razor2-Client-Agent' =>
-        [qw{perl-Razor-Agent perl-razor-agents razor-agents}],
+        [qw(perl-Razor-Agent perl-razor-agents razor-agents)],
 );
 
 # Add additional capabilities to some packages.
