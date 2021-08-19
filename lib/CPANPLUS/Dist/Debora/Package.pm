@@ -964,24 +964,25 @@ sub _get_docfiles {
        COPYING(?:[.](?:LESSER|LIB))?
        | COPYRIGHT
        | LICEN[CS]E
-       ) \z
+       ) (?:[.](?:md|mkdn|pod|txt))? \z
     }xmsi;
 
     my $CHANGELOG = qr{ \A (?:
-        Change(?:s|Log)(?:[.]md)?
-        ) \z
+        Change(?:s|Log)
+        ) (?:[.](?:md|mkdn|pod|txt))? \z
     }xmsi;
 
     my $DOC = qr{ \A (?:
         AUTHORS
         | BUGS
+        | CONTRIBUTING
         | CREDITS
         | FAQ
         | NEWS
-        | README(?:[.](?:md|pod))?
+        | README
         | THANKS
         | TODO
-        ) \z
+        ) (?:[.](?:md|mkdn|pod|txt))? \z
     }xmsi;
 
     my %regex_for = (
