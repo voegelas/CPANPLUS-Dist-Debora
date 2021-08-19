@@ -1,11 +1,10 @@
-image: perl:latest
+image: voegelas/perl-devel-cover
 
 before_script:
   - cpanm --installdeps .
 
 test_job:
   script:
-    - cpanm Devel::Cover
     - cover -delete
-    - env HARNESS_PERL_SWITCHES=-MDevel::Cover prove -Ilib
+    - env HARNESS_PERL_SWITCHES=-MDevel::Cover prove -l
     - cover -select_re ^lib/
