@@ -666,13 +666,13 @@ sub _read_epochs {
 
     my $name;
     if (open my $fh, '<', '/var/lib/dpkg/available') {
-        while (<$fh>) {
-            chomp;
+        while (my $line = <$fh>) {
+            chomp $line;
 
-            if (m{^ Package: \h+ (.+) $}xms) {
+            if ($line =~ m{^ Package: \h+ (.+) $}xms) {
                 $name = $1;
             }
-            elsif (m{^ Version: \h+ (\d+) :}xms) {
+            elsif ($line =~ m{^ Version: \h+ (\d+) :}xms) {
                 my $epoch = $1;
 
                 if (defined $name) {
@@ -680,7 +680,7 @@ sub _read_epochs {
                     undef $name;
                 }
             }
-            elsif (m{^$}xms) {
+            elsif ($line eq q{}) {
                 undef $name;
             }
         }
