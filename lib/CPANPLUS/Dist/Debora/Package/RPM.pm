@@ -30,6 +30,7 @@ my %OBSOLETES_FOR = (
     'App-Licensecheck'    => [qw(perl-App-Licensecheck)],
     'App-perlbrew'        => [qw(perl-App-perlbrew)],
     'Mojolicious'         => [qw(perl-Test-Mojo)],
+    'Perl-Critic'         => [qw(perl-Test-Perl-Critic-Policy)],
     'perl-ldap'           => [qw(perl-LDAP)],
     'Perl-Tidy'           => [qw(perltidy)],
     'TermReadKey'         => [qw(perl-TermReadKey)],
