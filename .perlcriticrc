@@ -6,4 +6,6 @@
 
 [-RegularExpressions::ProhibitComplexRegexes]
 
+[-ValuesAndExpressions::ProhibitFiletest_f]
+
 [-ValuesAndExpressions::ProhibitMagicNumbers]

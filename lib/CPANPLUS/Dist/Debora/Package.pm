@@ -404,7 +404,7 @@ sub sanitize_stagingdir {
             if (-d $path) {
                 rmdir $path;
             }
-            elsif (-f $path) {
+            else {
                 if (   $entry eq 'perllocal.pod'
                     || $entry eq '.packlist'
                     || ($entry =~ m{[.]bs \z}xms && -z $path))
@@ -1009,11 +1009,11 @@ sub _get_docfiles {
             # Skip symbolic links.
             next ENTRY if -l $path;
 
-            if (-f $path) {
-                chmod oct '0644', $path;
-            }
-            elsif (-d $path) {
+            if (-d $path) {
                 __SUB__->($path);
+            }
+            else {
+                chmod oct '0644', $path;
             }
         }
         closedir $dh;
@@ -1035,7 +1035,14 @@ sub _get_docfiles {
             # Skip symbolic links.
             next ENTRY if -l $path;
 
-            if (-f $path && -s $path) {
+            if (-d $path) {
+                if ($entry eq 'examples') {
+                    $fix_permissions->($path);
+                    my $file = {name => $entry, type => 'doc'};
+                    push @files, $file;
+                }
+            }
+            elsif (-s $path) {
                 TYPE:
                 for my $type (keys %regex_for) {
                     if ($entry =~ $regex_for{$type}) {
@@ -1044,13 +1051,6 @@ sub _get_docfiles {
                         push @files, $file;
                         last TYPE;
                     }
-                }
-            }
-            elsif (-d $path) {
-                if ($entry eq 'examples') {
-                    $fix_permissions->($path);
-                    my $file = {name => $entry, type => 'doc'};
-                    push @files, $file;
                 }
             }
         }

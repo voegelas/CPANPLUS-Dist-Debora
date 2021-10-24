@@ -222,7 +222,10 @@ sub find_most_recent_mtime {
             # Skip symbolic links.
             next ENTRY if -l $path;
 
-            if (-f $path) {
+            if (-d $path) {
+                __SUB__->($path);
+            }
+            else {
                 my @stat = stat $path;
                 if (@stat) {
                     my $mtime = $stat[9];
@@ -230,9 +233,6 @@ sub find_most_recent_mtime {
                         $most_recent_mtime = $mtime;
                     }
                 }
-            }
-            elsif (-d $path) {
-                __SUB__->($path);
             }
         }
         closedir $dh;
@@ -263,13 +263,13 @@ sub find_shared_objects {
             # Skip symbolic links.
             next ENTRY if -l $path;
 
-            if (-f $path) {
+            if (-d $path) {
+                __SUB__->($path);
+            }
+            else {
                 if (filetype($path) eq 'executable') {
                     push @shared_objects, $path;
                 }
-            }
-            elsif (-d $path) {
-                __SUB__->($path);
             }
         }
         closedir $dh;
