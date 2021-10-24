@@ -12,6 +12,7 @@ use parent qw(CPANPLUS::Dist::Base);
 
 use Config;
 use English qw(-no_match_vars);
+use File::Spec;
 use Module::Pluggable
     search_path => 'CPANPLUS::Dist::Debora::Package',
     sub_name    => '_formats',
@@ -116,7 +117,7 @@ sub create {
 
         # Required by Term::ReadLine::Gnu if the history-size is set in
         # ~/.inputrc.
-        local $ENV{INPUTRC} = '/dev/null';
+        local $ENV{INPUTRC} = File::Spec->devnull;
 
         # Dist::Zilla and Pinto require Perl 5.20.
         if ($PERL_VERSION < 5.020) {
