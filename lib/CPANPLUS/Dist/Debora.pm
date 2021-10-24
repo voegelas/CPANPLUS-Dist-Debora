@@ -284,6 +284,13 @@ Append the version to the distribution name.
 
   cpanp i Some-Module-0.9
 
+=head2 How can I install a Perl distribution from the local filesystem?
+
+Use a file URI.
+
+  cpanp i file:///tmp/Some-Module-1.0.tar.gz
+  rm ~/.cpanplus/authors/id/UNKNOWN-ORIGIN/Some-Module-1.0.tar.gz
+
 =head2 How can I list packages installed with CPANPLUS?
 
   dpkg-query -W -f '${Package} ${Version}\n' | \
@@ -291,6 +298,10 @@ Append the version to the distribution name.
 
   rpm -qa --qf '%{NAME} %{VENDOR}\n' | \
   perl -anE 'say $F[0] if $F[1] =~ /CPANPLUS/' | sort
+
+=head2 How can I force a manual update of the CPAN indices?
+
+  cpanp x --update_source
 
 =head1 SUBROUTINES/METHODS
 
