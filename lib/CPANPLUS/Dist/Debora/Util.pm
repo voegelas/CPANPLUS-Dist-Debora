@@ -278,7 +278,7 @@ sub find_shared_objects {
     };
     $find->($stagingdir);
 
-    return wantarray ? @shared_objects : \@shared_objects;
+    return \@shared_objects;
 }
 
 sub is_testing {
@@ -329,7 +329,9 @@ version 0.003
   }
 
   my $last_modification = find_most_recent_mtime($sourcedir);
-  my @shared_objects = find_shared_objects($stagingdir);
+  for my $filename (@{find_shared_objects($stagingdir)}) {
+    say $filename;
+  }
 
 =head1 DESCRIPTION
 
@@ -408,10 +410,10 @@ Returns the modification time.
 
 =head2 find_shared_objects
 
-  my @shared_objects = find_shared_objects($stagindir);
+  my @filenames = @{find_shared_objects($stagingdir)};
 
 Searches the specified directory recursively for shared objects and executable
-programs.  Returns an array of filenames.
+programs.
 
 =head2 is_testing
 

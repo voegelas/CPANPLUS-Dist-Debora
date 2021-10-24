@@ -229,7 +229,7 @@ sub provides {
         push @provides, @{$PROVIDES_FOR{$dist_name}};
     }
 
-    return wantarray ? @provides : \@provides;
+    return \@provides;
 }
 
 sub obsoletes {
@@ -242,7 +242,7 @@ sub obsoletes {
         push @obsoletes, @{$OBSOLETES_FOR{$dist_name}};
     }
 
-    return wantarray ? @obsoletes : \@obsoletes;
+    return \@obsoletes;
 }
 
 sub _escape {
@@ -620,15 +620,20 @@ RPM macro C<%distribution> or the F</etc/os-release> file.
 
 =head2 provides
 
-  my @provides = $package->provides;
+  for my $capability (@{$package->provides}) {
+    say $capability;
+  }
 
-Returns an array of capabilities that are provided by this package.
+Returns additional capabilities, i.e. package and module names, that are
+provided by this package.
 
 =head2 obsoletes
 
-  my @obsoletes = $package->obsoletes;
+  for my $package_name (@{$package->obsoletes}) {
+    say $package_name;
+  }
 
-Returns an array of packages that are obsoleted by this package.
+Returns packages that are obsoleted by this package.
 
 =head2 spec
 

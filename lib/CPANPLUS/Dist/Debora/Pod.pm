@@ -173,7 +173,7 @@ sub _copyrights_from_text {
     my @copyrights
         = sort { $a->{year} cmp $b->{year} } values %unique_copyrights;
 
-    return wantarray ? @copyrights : \@copyrights;
+    return \@copyrights;
 }
 
 sub copyrights {
@@ -190,7 +190,7 @@ sub copyrights {
         push @copyrights, @{$self->_copyrights_from_text($section)};
     }
 
-    return wantarray ? @copyrights : \@copyrights;
+    return \@copyrights;
 }
 
 sub section {

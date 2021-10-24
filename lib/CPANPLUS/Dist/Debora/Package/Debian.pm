@@ -307,7 +307,7 @@ sub provides {
         push @provides, @{$PROVIDES_FOR{$dist_name}};
     }
 
-    return wantarray ? @provides : \@provides;
+    return \@provides;
 }
 
 sub _date {
@@ -687,7 +687,7 @@ sub _read_epochs {
         close $fh or undef;
     }
 
-    return wantarray ? %epoch_for : \%epoch_for;
+    return \%epoch_for;
 }
 
 sub _get_epoch_from_env {
@@ -991,9 +991,11 @@ F<~/.cpanplus/5.34.0/build/XXXX/Some-Module-1.0/debian>.
 
 =head2 provides
 
-  my @provides = $package->provides;
+  for my $package_name (@{$package->provides}) {
+    say $package_name;
+  }
 
-Returns an array of virtual packages that are provided by this package.
+Returns virtual packages that are provided by this package.
 
 =head2 changelog
 
