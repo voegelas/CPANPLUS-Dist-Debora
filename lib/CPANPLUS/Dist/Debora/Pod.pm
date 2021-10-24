@@ -363,7 +363,7 @@ yeah!" will be returned.
 
   =head1 NAME
 
-  Hoo::Boy::Wowza - Stuff B<wow> yeah!
+  Hoo::Boy::Wowza - Stuff wow yeah!
 
 =head2 summary
 
@@ -376,7 +376,7 @@ returned.
 
   =head1 NAME
 
-  Hoo::Boy::Wowza - Stuff B<wow> yeah!
+  Hoo::Boy::Wowza - Stuff wow yeah!
 
 =head2 description
 

@@ -1,6 +1,12 @@
 [-CodeLayout::RequireTidyCode]
 
+[-CodeLayout::RequireTrailingCommaAtNewline]
+
 [-Documentation::PodSpelling]
+
+[-Documentation::RequireFilenameMarkup]
+
+[-Documentation::RequireLinkedURLs]
 
 [-InputOutput::RequireBriefOpen]
 
