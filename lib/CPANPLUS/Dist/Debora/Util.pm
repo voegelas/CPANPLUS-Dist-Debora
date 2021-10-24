@@ -51,14 +51,20 @@ sub parse_version {
 sub module_is_distributed_with_perl {
     my ($module_name, $version) = @_;
 
+    my $ok = 0;
+
     # cpan2dist is run with -w, which triggers a warning in Module::CoreList.
     local $WARNING = 0;
 
     my $upper = Module::CoreList->removed_from($module_name);
-    return if defined $upper && $perl_version >= parse_version($upper);
+    if (!defined $upper || $perl_version < parse_version($upper)) {
+        my $lower = Module::CoreList->first_release($module_name, $version);
+        if (defined $lower && $perl_version >= parse_version($lower)) {
+            $ok = 1;
+        }
+    }
 
-    my $lower = Module::CoreList->first_release($module_name, $version);
-    return defined $lower && $perl_version >= parse_version($lower);
+    return $ok;
 }
 
 sub decode_utf8 {
@@ -97,10 +103,12 @@ sub spew_utf8 {
 sub run {
     my (%options) = @_;
 
+    my $ok = 0;
+
     my $command = $options{command};
     if (!$command) {
         error('No command');
-        return;
+        return $ok;
     }
 
     my $dir = $options{dir};
@@ -119,11 +127,11 @@ sub run {
     if ($dir) {
         $origdir = cwd;
         if (!chdir $dir) {
-            return;
+            return $ok;
         }
     }
 
-    my $ok = IPC::Cmd::run(%options);
+    $ok = IPC::Cmd::run(%options);
     if (!$ok) {
         my $cmdline = join q{ }, @{$command};
         my $output  = ${$options{buffer}} // q{};
