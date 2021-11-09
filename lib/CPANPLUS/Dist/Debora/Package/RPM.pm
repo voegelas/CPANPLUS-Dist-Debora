@@ -47,9 +47,10 @@ my %PROVIDES_FOR = (
         perl(LWP::Protocol::http::Socket)
         perl(LWP::Protocol::http::SocketMethods)
     }],
-    'Module-CoreList' => [qw{perl-Module-CoreList-tools}],
-    'Moose'           => [qw{perl(Moose::Conflicts)}],
-    'Package-Stash'   => [qw{perl(Package::Stash::Conflicts)}],
+    'Module-CoreList'  => [qw{perl-Module-CoreList-tools}],
+    'Moose'            => [qw{perl(Moose::Conflicts)}],
+    'Package-Stash'    => [qw{perl(Package::Stash::Conflicts)}],
+    'XS-Parse-Keyword' => [qw{perl(:XS_Parse_Keyword_ABI_2)}],
 );
 
 sub format_priority {
