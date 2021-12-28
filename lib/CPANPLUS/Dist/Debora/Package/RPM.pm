@@ -364,7 +364,9 @@ else {
     $OUT .= "AutoReq:   1\n";
 }
 
+$OUT .= "%if 0%{?fedora} > 0 || 0%{?rhel} > 0 || 0%{?suse_version} > 0\n";
 $OUT .= 'Requires:  perl(:MODULE_COMPAT_' . $escape->($perl_version) . ")\n";
+$OUT .= "%endif\n";
 for my $dependency (@{$package->dependencies}) {
     if ($dependency->{is_module}) {
         $OUT .= 'Requires:  perl(' . $escape->($dependency->{module_name}) . ')';
