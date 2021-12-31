@@ -84,7 +84,11 @@ sub prepare {
         # We are not allowed to write to XML/SAX/ParserDetails.ini.
         local $ENV{SKIP_SAX_INSTALL} = 1;
 
-        $self->SUPER::prepare(%params);
+        $self->SUPER::prepare(
+            %params,
+            buildflags     => q{},
+            makemakerflags => q{},
+        );
     };
 
     return $status->prepared($ok);
@@ -130,7 +134,11 @@ sub create {
             }
         }
 
-        $self->SUPER::create(%params);
+        $self->SUPER::create(
+            %params,
+            buildflags     => q{},
+            makemakerflags => q{},
+        );
     };
 
     if ($ok) {
