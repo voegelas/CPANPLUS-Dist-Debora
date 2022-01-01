@@ -275,6 +275,11 @@ option is not set.
 
   CPAN Terminal> s conf verbose 1
 
+On some systems signature checks might be enabled by default, but many Perl
+distributions do not provide signatures.
+
+  CPAN Terminal> s conf signature 0
+
 CPANPLUS uses less memory if the SQLite backend is enabled.
 
   CPAN Terminal> s conf source_engine CPANPLUS::Internals::Source::SQLite
