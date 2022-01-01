@@ -373,15 +373,19 @@ Standards-Version: 4.5.1
 Homepage: [% $package->url %]
 
 Package: [% $package->name %]
-Architecture: [% $package->is_noarch ? 'all' : 'any' %]
 [%
+$OUT .= 'Architecture: ';
+$OUT .=  $package->is_noarch ? 'all' : 'any';
 my @provides = @{$package->provides};
 if (@provides) {
-    $OUT .= 'Provides: ' . shift @provides;
+    $OUT .= "\n";
+    $OUT .= 'Provides: ';
+    $OUT .= shift @provides;
     for my $name (@provides) {
         $OUT .= ", $name";
     }
 }
+q{};
 %]
 [%
 $OUT .= 'Depends: ${misc:Depends}, ${perl:Depends}';
@@ -404,14 +408,15 @@ for my $dependency (@dependencies) {
         $OUT .= ' | libossp-uuid-perl';
     }
 }
+q{};
 %]
 Description: [% $package->summary %]
 [%
-  local $Text::Wrap::unexpand = 0;
-  my $text = Text::Wrap::wrap(q{ }, q{ }, $package->description);
-  $text =~ s{^ [ ] [.]}{ \N{U+200B}.}xmsg; # Put a non-visible space before dots.
-  $text =~ s{^ [ ] (\h*) $}{ .$1}xmsg;     # Put a dot into empty lines.
-  $OUT .= $text;
+local $Text::Wrap::unexpand = 0;
+my $text = Text::Wrap::wrap(q{ }, q{ }, $package->description);
+$text =~ s{^ [ ] [.]}{ \N{U+200B}.}xmsg; # Put a non-visible space before dots.
+$text =~ s{^ [ ] (\h*) $}{ .$1}xmsg;     # Put a dot into empty lines.
+$text;
 %]
 END_TEMPLATE
 
@@ -461,6 +466,7 @@ for my $license (@licenses) {
         $OUT .= "\n";
     }
 }
+q{};
 %]
 END_TEMPLATE
 
@@ -509,6 +515,7 @@ if ($first_changelog) {
     $OUT .= "\noverride_dh_installchangelogs:\n";
     $OUT .= "\tdh_installchangelogs $first_changelog";
 }
+q{};
 %]
 [%
 my $installdirs = $package->installdirs;
@@ -525,6 +532,7 @@ if ($installdirs eq 'site') {
     $OUT .= "\trm -rf '$debiandocdir'\n";
     $OUT .= "\tfind '$buildrootdir' -type d -empty -delete";
 }
+q{};
 %]
 END_TEMPLATE
 

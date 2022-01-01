@@ -379,13 +379,14 @@ for my $dependency (@{$package->dependencies}) {
     }
     $OUT .= "\n";
 }
+q{};
 %]
 %{?perl_default_filter}
 
 %description
 [%
-    local $Text::Wrap::unexpand = 0;
-    $escape->(Text::Wrap::wrap(q{}, q{}, $package->description))
+local $Text::Wrap::unexpand = 0;
+$escape->(Text::Wrap::wrap(q{}, q{}, $package->description))
 %]
 
 %{?debug_package}
@@ -423,6 +424,7 @@ for my $file (@{$package->files}) {
     }
     $OUT .= "\n";
 }
+q{};
 %]
 %changelog
 * [% $date %] [% $escape->($package->packager) %] - [% $escape->($package->version) %]-[% $escape->($package->build_number) %]
