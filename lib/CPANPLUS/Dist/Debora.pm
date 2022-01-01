@@ -457,9 +457,9 @@ modification time of the source is used.
 
 =head1 DEPENDENCIES
 
-Requires Perl 5.16 and the modules CPANPLUS, CPANPLUS::Dist::Build,
-Module::Pluggable, Software::License and Text::Template from CPAN.  IPC::Run
-and Term::ReadLine::Gnu are recommended.
+Requires Perl 5.16 and the modules L<CPANPLUS>, L<CPANPLUS::Dist::Build>,
+L<Module::Pluggable>, L<Software::License> and L<Text::Template> from CPAN.
+L<IPC::Run> and L<Term::ReadLine::Gnu> are recommended.
 
 On Debian-based systems, install the packages "perl", "build-essential",
 "debhelper", "fakeroot" and "sudo".  The minimum supported debhelper version
@@ -496,7 +496,7 @@ like to build Perl distributions that require C libraries.
 The created packages may provide the same files as packages provided by your
 operating system vendor.
 
-Software::LicenseUtils recognizes a lot of common licenses, but isn't perfect.
+Software::LicenseUtils recognizes a lot of common licenses but isn't perfect.
 
 This module cannot be used in taint mode.
 
