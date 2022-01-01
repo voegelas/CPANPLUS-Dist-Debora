@@ -940,7 +940,7 @@ version 0.006
 
 =head1 DESCRIPTION
 
-This CPANPLUS::Dist::Debora::Package subclass creates Debian packages from
+This L<CPANPLUS::Dist::Debora::Package> subclass creates Debian packages from
 Perl distributions.
 
 =head1 SUBROUTINES/METHODS
@@ -1037,15 +1037,15 @@ Fills in a template and returns a rules file.
 
 =head1 DIAGNOSTICS
 
-See CPANPLUS::Dist::Debora for diagnostics.
+See L<CPANPLUS::Dist::Debora> for diagnostics.
 
 =head1 CONFIGURATION AND ENVIRONMENT
 
-See CPANPLUS::Dist::Debora for supported files and environment variables.
+See L<CPANPLUS::Dist::Debora> for supported files and environment variables.
 
 =head1 DEPENDENCIES
 
-Requires the Perl modules CPANPLUS and Text::Template from CPAN.
+Requires the Perl modules L<CPANPLUS> and L<Text::Template> from CPAN.
 
 Requires the operating system packages "perl", "build-essential", "debhelper",
 "fakeroot" and "sudo".  The minimum supported debhelper version is 12.

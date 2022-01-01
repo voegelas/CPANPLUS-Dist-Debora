@@ -270,7 +270,7 @@ version 0.006
 
 =head1 DESCRIPTION
 
-This CPANPLUS::Dist::Debora::Package subclass creates tar archives from
+This L<CPANPLUS::Dist::Debora::Package> subclass creates tar archives from
 Perl distributions.
 
 =head1 SUBROUTINES/METHODS
@@ -310,7 +310,7 @@ None.
 
 =head1 DEPENDENCIES
 
-Requires the tar program and the Perl module Archive::Tar.
+Requires the tar program and the Perl module L<Archive::Tar>.
 
 =head1 INCOMPATIBILITIES
 

@@ -241,8 +241,9 @@ version 0.006
 
 =head1 DESCRIPTION
 
-This CPANPLUS plugin creates Debian or RPM packages from Perl distributions.
-The created packages can be installed with CPANPLUS, dpkg or rpm.
+This L<CPANPLUS> plugin creates Debian or RPM packages from Perl
+distributions.  The created packages can be installed with CPANPLUS, dpkg or
+rpm.
 
 =head2 Usage
 
@@ -398,7 +399,8 @@ A file does not exist or was removed while CPANPLUS was running.
 
 =item B<< Unknown installer type >>
 
-CPANPLUS::Dist::Debora supports CPANPLUS::Dist::Build and CPANPLUS::Dist::MM.
+CPANPLUS::Dist::Debora supports L<CPANPLUS::Dist::Build> and
+L<CPANPLUS::Dist::MM>.
 
 =back
 
@@ -489,7 +491,7 @@ Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
 
 Enable C<verbose> mode if you would like to get feedback while CPANPLUS
 downloads the list of Perl distributions from the Comprehensive Perl Archive
-Network (CPAN).  Use CPAN::Mini or a repository manager to mirror the CPAN
+Network (CPAN).  Use L<CPAN::Mini> or a repository manager to mirror the CPAN
 locally.
 
 Some Perl distributions fail to show interactive prompts if the C<verbose>
@@ -501,7 +503,8 @@ like to build Perl distributions that require C libraries.
 The created packages may provide the same files as packages provided by your
 operating system vendor.
 
-Software::LicenseUtils recognizes a lot of common licenses but isn't perfect.
+L<Software::LicenseUtils> recognizes a lot of common licenses but isn't
+perfect.
 
 This module cannot be used in taint mode.
 

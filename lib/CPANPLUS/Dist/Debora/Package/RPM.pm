@@ -551,8 +551,8 @@ version 0.006
 
 =head1 DESCRIPTION
 
-This CPANPLUS::Dist::Debora::Package subclass creates binary RPM packages from
-Perl distributions.
+This L<CPANPLUS::Dist::Debora::Package> subclass creates binary RPM packages
+from Perl distributions.
 
 =head1 SUBROUTINES/METHODS
 
@@ -649,15 +649,15 @@ Fills in a template and returns a spec file.
 
 =head1 DIAGNOSTICS
 
-See CPANPLUS::Dist::Debora for diagnostics.
+See L<CPANPLUS::Dist::Debora> for diagnostics.
 
 =head1 CONFIGURATION AND ENVIRONMENT
 
-See CPANPLUS::Dist::Debora for supported files and environment variables.
+See L<CPANPLUS::Dist::Debora> for supported files and environment variables.
 
 =head1 DEPENDENCIES
 
-Requires the Perl modules CPANPLUS and Text::Template from CPAN.
+Requires the Perl modules L<CPANPLUS> and L<Text::Template> from CPAN.
 
 Requires the operating system packages "perl", "rpm-build", "gcc", "make",
 "sudo" and, if available, "perl-generators".
@@ -675,6 +675,8 @@ rpm(8), rpmbuild(8)
 Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
 
 =head1 BUGS AND LIMITATIONS
+
+The License field is populated with SPDX license expressions.
 
 The date in the RPM changelog is in Coordinated Universal Time (UTC).
 

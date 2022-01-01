@@ -154,7 +154,7 @@ version 0.006
 
 =head1 DESCRIPTION
 
-This Software::License subclass reads license texts from files and Pod
+This L<Software::License> subclass reads license texts from files and Pod
 documents.
 
 =head1 SUBROUTINES/METHODS
@@ -166,7 +166,7 @@ documents.
       holder  => $holder,
   });
 
-Creates a new object.  The CPANPLUS::Dist::Debora::Package object parameter
+Creates a new object.  The L<CPANPLUS::Dist::Debora::Package> object parameter
 and the copyright holder are mandatory.
 
 =head2 name
@@ -203,7 +203,7 @@ None.
 
 =head1 DEPENDENCIES
 
-Requires the module Software::License from CPAN.
+Requires the module L<Software::License> from CPAN.
 
 =head1 INCOMPATIBILITIES
 
