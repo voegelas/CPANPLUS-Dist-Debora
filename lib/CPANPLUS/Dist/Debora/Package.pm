@@ -1507,9 +1507,9 @@ Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
 
 =head1 BUGS AND LIMITATIONS
 
-Some operating systems numify Perl distribution versions, but not
-consistently.  This module sticks closely to the version string, which seems
-to be the most common approach.
+Some operating systems numify Perl distribution versions but not consistently.
+This module sticks closely to the version string, which seems to be the most
+common approach.
 
 This module cannot be used in taint mode.
 
