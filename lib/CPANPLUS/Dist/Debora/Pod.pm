@@ -348,7 +348,7 @@ Parses the specified Pod file.
 Returns the Pod document, which is simplified for the purpose of finding
 descriptions and license information.
 
-Uses L<Software::LicenseUtils> to guess the license.
+Use L<Software::LicenseUtils> to guess the license.
 
   my @licenses = Software::LicenseUtils->guess_license_from_pod($pod_text);
 
