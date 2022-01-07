@@ -26,6 +26,8 @@ sub format_priority {
     return $priority;
 }
 
+## no critic (Subroutines::ProhibitUnusedPrivateSubroutines)
+
 sub _normalize_version {
     my ($self, $dist_version) = @_;
 
