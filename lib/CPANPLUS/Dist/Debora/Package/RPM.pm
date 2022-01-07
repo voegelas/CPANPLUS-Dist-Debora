@@ -358,6 +358,9 @@ if ($package->is_noarch) {
     $OUT .= "AutoReq:   0\n";
 }
 else {
+    if (@{$package->shared_objects} == 0) {
+        $OUT .= "%global debug_package %{nil}\n";
+    }
     $OUT .= "%global __perl_requires /bin/true\n";
     $OUT .= "%global __perllib_requires /bin/true\n";
     $OUT .= "%global __perltest_requires /bin/true\n";
