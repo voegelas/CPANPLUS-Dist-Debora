@@ -37,7 +37,7 @@ use version 0.77;
 
 use CPANPLUS::Error qw(error);
 
-# Avoid warnings from IO::Select.
+# Avoid warnings from IO::Select by using IPC::Run.
 $IPC::Cmd::USE_IPC_RUN = IPC::Cmd->can_use_ipc_run;
 
 my $perl_version = parse_version($PERL_VERSION);
