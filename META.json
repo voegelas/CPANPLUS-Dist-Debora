@@ -121,13 +121,13 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://gitlab.com/voegelas/cpanplus-dist-debora/-/issues"
+         "web" : "https://github.com/voegelas/CPANPLUS-Dist-Debora/issues"
       },
-      "homepage" : "https://gitlab.com/voegelas/cpanplus-dist-debora",
+      "homepage" : "https://github.com/voegelas/CPANPLUS-Dist-Debora/wiki",
       "repository" : {
          "type" : "git",
-         "url" : "https://gitlab.com/voegelas/cpanplus-dist-debora.git",
-         "web" : "https://gitlab.com/voegelas/cpanplus-dist-debora/-/tree/main"
+         "url" : "https://github.com/voegelas/CPANPLUS-Dist-Debora.git",
+         "web" : "https://github.com/voegelas/CPANPLUS-Dist-Debora"
       }
    },
    "version" : "0.009",
