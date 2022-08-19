@@ -13,3 +13,4 @@
 -nst     # Write reformatted code to file
 -nse     # Write error messages to file
 -bext=~  # Set backup file extension
+-vxl=q   # Do not align qw quotes in 'use'
