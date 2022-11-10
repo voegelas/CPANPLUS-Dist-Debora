@@ -316,13 +316,13 @@ Requires the tar program and the Perl module L<Archive::Tar>.
 
 None.
 
-=head1 AUTHOR
-
-Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
-
 =head1 BUGS AND LIMITATIONS
 
 This module cannot be used in taint mode.
+
+=head1 AUTHOR
+
+Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
 
 =head1 LICENSE AND COPYRIGHT
 

@@ -456,15 +456,15 @@ Requires only modules that are distributed with Perl.
 
 None.
 
-=head1 AUTHOR
-
-Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
-
 =head1 BUGS AND LIMITATIONS
 
 Install L<IPC::Run> if IPC::Open3 causes IO::Select to output warnings.
 
 This module cannot be used in taint mode.
+
+=head1 AUTHOR
+
+Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
 
 =head1 LICENSE AND COPYRIGHT
 

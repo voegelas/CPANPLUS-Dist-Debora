@@ -684,14 +684,6 @@ Requires the operating system packages "perl", "rpm-build", "gcc", "make",
 
 None.
 
-=head1 SEE ALSO
-
-rpm(8), rpmbuild(8)
-
-=head1 AUTHOR
-
-Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
-
 =head1 BUGS AND LIMITATIONS
 
 The License field is populated with SPDX license expressions.
@@ -706,6 +698,14 @@ F</opt/bin/perl> to F</usr/bin/perl> if you need to install such Perl
 distributions.
 
 This module cannot be used in taint mode.
+
+=head1 SEE ALSO
+
+rpm(8), rpmbuild(8)
+
+=head1 AUTHOR
+
+Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
 
 =head1 LICENSE AND COPYRIGHT
 

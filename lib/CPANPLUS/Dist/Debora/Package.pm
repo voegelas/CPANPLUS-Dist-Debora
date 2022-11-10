@@ -1539,6 +1539,14 @@ Requires the module L<Software::License> from CPAN.
 
 None.
 
+=head1 BUGS AND LIMITATIONS
+
+Some operating systems numify Perl distribution versions but not consistently.
+This module sticks closely to the version string, which seems to be the most
+common approach.
+
+This module cannot be used in taint mode.
+
 =head1 SEE ALSO
 
 L<CPANPLUS::Dist::Debora::Package::Debian>,
@@ -1551,14 +1559,6 @@ L<CPANPLUS::Dist::Debora::Util>
 =head1 AUTHOR
 
 Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
-
-=head1 BUGS AND LIMITATIONS
-
-Some operating systems numify Perl distribution versions but not consistently.
-This module sticks closely to the version string, which seems to be the most
-common approach.
-
-This module cannot be used in taint mode.
 
 =head1 LICENSE AND COPYRIGHT
 

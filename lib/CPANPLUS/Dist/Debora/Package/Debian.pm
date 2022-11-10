@@ -1054,6 +1054,10 @@ Requires the operating system packages "perl", "build-essential", "debhelper",
 
 None.
 
+=head1 BUGS AND LIMITATIONS
+
+This module cannot be used in taint mode.
+
 =head1 SEE ALSO
 
 dpkg(1), dpkg-buildpackage(1), debhelper(7)
@@ -1061,10 +1065,6 @@ dpkg(1), dpkg-buildpackage(1), debhelper(7)
 =head1 AUTHOR
 
 Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
-
-=head1 BUGS AND LIMITATIONS
-
-This module cannot be used in taint mode.
 
 =head1 LICENSE AND COPYRIGHT
 

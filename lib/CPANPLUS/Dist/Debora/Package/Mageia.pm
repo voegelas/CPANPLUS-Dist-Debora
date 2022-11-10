@@ -92,13 +92,13 @@ See L<CPANPLUS::Dist::Debora::Package::RPM> for dependencies.
 
 None.
 
-=head1 AUTHOR
-
-Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
-
 =head1 BUGS AND LIMITATIONS
 
 See L<CPANPLUS::Dist::Debora::Package::RPM> for bugs and limitations.
+
+=head1 AUTHOR
+
+Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
 
 =head1 LICENSE AND COPYRIGHT
 

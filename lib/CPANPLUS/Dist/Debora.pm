@@ -475,14 +475,6 @@ On RPM-based systems, install the packages "perl", "rpm-build", "gcc", "make",
 
 None.
 
-=head1 SEE ALSO
-
-cpanp(1), cpan2dist(1), sudo(8)
-
-=head1 AUTHOR
-
-Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
-
 =head1 BUGS AND LIMITATIONS
 
 Enable C<verbose> mode if you would like to get feedback while CPANPLUS
@@ -503,6 +495,14 @@ L<Software::LicenseUtils> recognizes a lot of common licenses but isn't
 perfect.
 
 This module cannot be used in taint mode.
+
+=head1 SEE ALSO
+
+cpanp(1), cpan2dist(1), sudo(8)
+
+=head1 AUTHOR
+
+Andreas Vögele E<lt>voegelas@cpan.orgE<gt>
 
 =head1 LICENSE AND COPYRIGHT
 
