@@ -171,6 +171,19 @@ sub outputname {
     return $outputname;
 }
 
+sub license {
+    my $self = shift;
+
+    my $license = $self->SUPER::license;
+
+    # Fedora's rpmlint expects the licenses in reversed order.
+    if ($license eq 'Artistic-1.0-Perl OR GPL-1.0-or-later') {
+        $license = 'GPL-1.0-or-later OR Artistic-1.0-Perl';
+    }
+
+    return $license;
+}
+
 sub rpmdir {
     my $self = shift;
 
