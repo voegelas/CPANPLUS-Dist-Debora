@@ -659,7 +659,7 @@ sub _get_packager {
 
     if (!$name) {
         NAME:
-        for my $key (qw(DEBFULLNAME NAME)) {
+        for my $key (qw(DEBFULLNAME NAME GITLAB_USER_NAME)) {
             if ($ENV{$key}) {
                 $name = eval { decode_utf8($ENV{$key}) };
                 last NAME if $name;
@@ -667,7 +667,7 @@ sub _get_packager {
         }
     }
 
-    for my $key (qw(DEBEMAIL EMAIL)) {
+    for my $key (qw(DEBEMAIL EMAIL GITLAB_USER_EMAIL)) {
         if ($ENV{$key}) {
             my $value = eval { decode_utf8($ENV{$key}) };
             if ($value && $value =~ $EMAIL) {

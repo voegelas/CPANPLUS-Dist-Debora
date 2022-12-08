@@ -435,16 +435,16 @@ On RPM-based systems, you might have to set the package epoch manually as
 there is no standardized database that can be queried for epochs.  On
 Debian-based systems, it is generally not necessary to set epochs manually.
 
-=head3 DEBFULLNAME, NAME
+=head3 DEBFULLNAME, NAME, GITLAB_USER_NAME
 
 The packager's name.
 
-=head3 DEBEMAIL, EMAIL
+=head3 DEBEMAIL, EMAIL, GITLAB_USER_EMAIL
 
 The packager's email address.
 
-If C<DEBFULLNAME> and C<NAME> are not set and if the email address has got the
-format "name <address>", the packager's name is taken from the email address.
+If the packager's name is unavailable and if the email address has got the
+format "name <address>", the name is taken from the email address.
 
 If the packager's name cannot be extracted from the environment, the name is
 taken from the gecos field in the password database.
