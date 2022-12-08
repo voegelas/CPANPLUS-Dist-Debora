@@ -266,8 +266,7 @@ sub packager {
 sub vendor {
     my $self = shift;
 
-    my $vendor = $self->_read('vendor',
-        sub { $self->rpm_eval('%{?vendor}') || 'CPANPLUS' });
+    my $vendor = $self->_read('vendor', sub { $self->_get_vendor });
 
     return $vendor;
 }
@@ -721,6 +720,17 @@ sub _get_packager {
     }
 
     return "$name <$email>";
+}
+
+sub _get_vendor {
+    my $self = shift;
+
+    my $vendor = $self->rpm_eval('%{?vendor}');
+    if (!$vendor || $vendor =~ m{%}xms) {
+        $vendor = 'CPANPLUS';
+    }
+
+    return $vendor;
 }
 
 sub _get_summary_from_meta {
