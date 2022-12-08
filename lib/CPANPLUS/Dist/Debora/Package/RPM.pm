@@ -340,6 +340,8 @@ my $perl_vendorlib = $Config{installvendorlib};
 
 my $distdir = "$perl_vendorlib/auto/share/dist/CPANPLUS-Dist-Debora";
 
+my $has_shared_objects = (@{$package->shared_objects} > 0);
+
 my $epoch = $package->epoch;
 if ($epoch) {
     $OUT .= 'Epoch:     ' . $escape->($epoch). "\n";
@@ -386,7 +388,7 @@ if ($package->is_noarch) {
     $OUT .= "AutoReq:   0\n";
 }
 else {
-    if (@{$package->shared_objects} == 0) {
+    if (!$has_shared_objects) {
         $OUT .= "%global debug_package %{nil}\n";
     }
     $OUT .= "%global __perl_requires /bin/true\n";
@@ -395,7 +397,15 @@ else {
     $OUT .= "AutoReq:   1\n";
 }
 
-$OUT .= "%if 0%{?fedora} > 0 || 0%{?rhel} > 0 || 0%{?suse_version} > 0\n";
+$OUT .= "%if 0%{?fedora} > 0 || 0%{?rhel} > 0\n";
+if ($has_shared_objects) {
+    $OUT .= 'Requires:  perl(:MODULE_COMPAT_' . $escape->($perl_version) . ")\n";
+}
+else {
+    $OUT .= "Requires:  perl-libs\n";
+}
+$OUT .= "%endif\n";
+$OUT .= "%if 0%{?suse_version} > 0\n";
 $OUT .= 'Requires:  perl(:MODULE_COMPAT_' . $escape->($perl_version) . ")\n";
 $OUT .= "%endif\n";
 for my $dependency (@{$package->dependencies}) {
