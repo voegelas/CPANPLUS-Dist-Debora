@@ -707,13 +707,11 @@ None.
 
 =head1 BUGS AND LIMITATIONS
 
-The License field is populated with SPDX license expressions.
-
 The date in the RPM changelog is in Coordinated Universal Time (UTC).
 
 AutoReq is enabled for architecture-dependent packages so that shared library
-dependencies are added.  Unfortunately, there are Perl distributions with
-hardcoded dependencies on F</opt/bin/perl> that are also picked up by AutoReq.
+dependencies are added.  Unfortunately, there are some Perl distributions with
+hardcoded dependencies on F</opt/bin/perl> that are picked up by AutoReq.
 Create an additional RPM package that provides a symbolic link from
 F</opt/bin/perl> to F</usr/bin/perl> if you need to install such Perl
 distributions.
