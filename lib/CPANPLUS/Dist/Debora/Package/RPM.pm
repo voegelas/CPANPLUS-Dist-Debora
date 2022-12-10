@@ -405,9 +405,6 @@ else {
     $OUT .= "Requires:  perl-libs\n";
 }
 $OUT .= "%endif\n";
-$OUT .= "%if 0%{?suse_version} > 0\n";
-$OUT .= 'Requires:  perl(:MODULE_COMPAT_' . $escape->($perl_version) . ")\n";
-$OUT .= "%endif\n";
 for my $dependency (@{$package->dependencies}) {
     if ($dependency->{is_module}) {
         $OUT .= 'Requires:  perl(' . $escape->($dependency->{module_name}) . ')';
@@ -420,6 +417,7 @@ for my $dependency (@{$package->dependencies}) {
     }
     $OUT .= "\n";
 }
+$OUT .= "%{?perl_requires}\n";
 q{};
 %]
 %{?perl_default_filter}
