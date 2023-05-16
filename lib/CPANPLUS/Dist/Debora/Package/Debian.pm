@@ -967,7 +967,7 @@ Installs the package.
 =head2 outputname
 
 Returns the package filename, for example
-F<~/.cpanplus/5.34.0/build/XXXX/libsome-module-perl_1.0-1cpanplus_all.deb>.
+F<~/.cpanplus/5.36.1/build/XXXX/libsome-module-perl_1.0-1cpanplus_all.deb>.
 
 =head2 arch
 
@@ -995,7 +995,7 @@ suffix 'cpanplus'.
   my $debiandir = $package->debiandir;
 
 Returns the path to the debian subdirectory, e.g.
-F<~/.cpanplus/5.34.0/build/XXXX/Some-Module-1.0/debian>.
+F<~/.cpanplus/5.36.1/build/XXXX/Some-Module-1.0/debian>.
 
 =head2 provides
 
@@ -1056,7 +1056,7 @@ None.
 
 =head1 BUGS AND LIMITATIONS
 
-This module cannot be used in taint mode.
+None known.
 
 =head1 SEE ALSO
 

@@ -716,8 +716,6 @@ Create an additional RPM package that provides a symbolic link from
 F</opt/bin/perl> to F</usr/bin/perl> if you need to install such Perl
 distributions.
 
-This module cannot be used in taint mode.
-
 =head1 SEE ALSO
 
 rpm(8), rpmbuild(8)

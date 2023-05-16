@@ -11,7 +11,7 @@ The created packages can be installed with CPANPLUS, dpkg or rpm.
     $ cd ~/rpmbuild/RPMS/noarch
     $ sudo rpm -i perl-Some-Module-1.0-1.noarch.rpm
 
-    $ cd ~/.cpanplus/5.34.0/build/XXXX
+    $ cd ~/.cpanplus/5.36.1/build/XXXX
     $ sudo dpkg -i libsome-module-perl_1.0-1cpanplus_all.deb
 
 ## DEPENDENCIES

@@ -1318,21 +1318,21 @@ Returns the last modification time of the source.
   my $builddir = $package->builddir;
 
 Returns the directory the source archive was extracted to, e.g.
-F<~/.cpanplus/5.34.0/build/XXXX/Some-Module-1.0>.
+F<~/.cpanplus/5.36.1/build/XXXX/Some-Module-1.0>.
 
 =head2 outputdir
 
   my $outputdir = $package->outputdir;
 
 Returns the build directory's parent directory, e.g.
-F<~/.cpanplus/5.34.0/build/XXXX>.
+F<~/.cpanplus/5.36.1/build/XXXX>.
 
 =head2 stagingdir
 
   my $stagingdir = $package->stagingdir;
 
 Returns the staging directory where CPANPLUS installs the Perl distribution,
-e.g. F<~/.cpanplus/5.34.0/build/XXXX/stagingYYYY>.
+e.g. F<~/.cpanplus/5.36.1/build/XXXX/stagingYYYY>.
 
 =head2 shared_objects
 
@@ -1554,8 +1554,6 @@ None.
 Some operating systems numify Perl distribution versions but not consistently.
 This module sticks closely to the version string, which seems to be the most
 common approach.
-
-This module cannot be used in taint mode.
 
 =head1 SEE ALSO
 

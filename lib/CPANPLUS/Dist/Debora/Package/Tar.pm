@@ -298,7 +298,7 @@ Extracts the tar archive.
   my $tar = $package->outputname;
 
 Returns the tar archive's name, e.g.
-F<~/.cpanplus/5.34.0/build/XXXX/perl-Some-Module-1.0-1.tar.gz>.
+F<~/.cpanplus/5.36.1/build/XXXX/perl-Some-Module-1.0-1.tar.gz>.
 
 =head1 DIAGNOSTICS
 
@@ -318,7 +318,7 @@ None.
 
 =head1 BUGS AND LIMITATIONS
 
-This module cannot be used in taint mode.
+None known.
 
 =head1 AUTHOR
 
