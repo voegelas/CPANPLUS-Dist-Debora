@@ -31,7 +31,7 @@ On Debian-based systems, the following packages are required:
 On RPM-based systems, install the following packages:
 
 * perl
-* perl-generators (if available)
+* perl-devel and perl-generators (if available)
 * rpm-build
 * gcc
 * make

@@ -468,7 +468,7 @@ On Debian-based systems, install the packages "perl", "build-essential",
 is 12.
 
 On RPM-based systems, install the packages "perl", "rpm-build", "gcc", "make",
-"sudo" and, if available, "perl-generators".
+"sudo" and, if available, "perl-devel" and "perl-generators".
 
 =head1 INCOMPATIBILITIES
 
