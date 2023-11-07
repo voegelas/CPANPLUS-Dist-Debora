@@ -415,6 +415,7 @@ sub sanitize_stagingdir {
             else {
                 if (   $entry eq 'perllocal.pod'
                     || $entry eq '.packlist'
+                    || $entry =~ m{[.]la \z}xms
                     || ($entry =~ m{[.]bs \z}xms && -z $path))
                 {
                     if (!unlink $path) {
