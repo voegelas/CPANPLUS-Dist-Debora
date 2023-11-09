@@ -832,6 +832,7 @@ sub _get_dependencies {
         'Catalyst-Runtime' => sub {0},
         'CGI-Simple'       => sub {0},
         'DBD-Pg'           => sub { $self->_unnumify_version($_[0]) },
+        'Time-Local'       => sub {0},
     );
 
     my %dependency;
