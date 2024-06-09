@@ -375,12 +375,6 @@ for my $name (@{$package->obsoletes}) {
 
 $OUT .= "AutoProv:  1\n";
 
-# We have to use an updated perl.prov on CentOS 7.
-my $perl_prov = "$distdir/perl.prov";
-if (-x $perl_prov) {
-    $OUT .= "%global __perllib_provides $perl_prov\n";
-}
-
 # /usr/lib/rpm/perl.req finds too many circular, internal and optional
 # dependencies, but we have to add shared library dependencies to
 # architecture-dependent Perl distributions.
