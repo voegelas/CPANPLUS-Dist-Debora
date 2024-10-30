@@ -95,6 +95,7 @@ sub create {
         '-D',       'source_date_epoch_from_changelog 0',
         '-D',       'use_source_date_epoch_as_buildtime 1',
         '-D',       'clamp_mtime_to_source_date_epoch 1',
+        '--build-in-place',
     );
 
     if ($self->installdirs eq 'site') {
