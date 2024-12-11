@@ -428,6 +428,13 @@ $escape->(Text::Wrap::wrap(q{}, q{}, $package->description))
 %check
 
 %install
+[%
+for my $so (@{$package->shared_objects}) {
+    $OUT .= "%if %{defined __strip}\n";
+    $OUT .= "%{__strip} -g '" . $escape->($so) . "'\n";
+    $OUT .= "%endif\n";
+}
+%]
 tar -C '[% $escape->($package->stagingdir) %]' -cf - . | tar -C %{buildroot} -xf -
 
 %clean
