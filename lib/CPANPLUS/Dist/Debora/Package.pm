@@ -250,7 +250,7 @@ sub build_number {
 sub author {
     my $self = shift;
 
-    my $author = $self->_read('author', sub { $self->module->author->author });
+    my $author = $self->_read('author', sub { $self->_get_author });
 
     return $author;
 }
@@ -637,6 +637,19 @@ sub _get_module_name {
     my $filename = catfile($self->builddir, 'lib', @module) . '.pm';
     if (-f $filename) {
         $name = join q{::}, @module;
+    }
+
+    return $name;
+}
+
+sub _get_author {
+    my $self = shift;
+
+    my $name;
+
+    my $author = $self->module->author;
+    if (defined $author && ref $author ne 'CPANPLUS::Module::Author::Fake') {
+        $name = $author->author;
     }
 
     return $name;
