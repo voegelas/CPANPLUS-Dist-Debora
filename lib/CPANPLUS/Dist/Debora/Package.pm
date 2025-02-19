@@ -729,6 +729,9 @@ sub _get_packager {
 
     if (!$email) {
         my $host = hostfqdn;
+        if (!$host) {
+            $host = 'localhost';
+        }
         $host =~ s{[.]$}{}xms;
         $email = $user . q{@} . $host;
     }
