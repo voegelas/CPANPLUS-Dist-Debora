@@ -336,10 +336,7 @@ URL:       [% $escape->($package->url) %]
 [%
 use Config;
 
-my $perl_version   = $Config{version};
-my $perl_vendorlib = $Config{installvendorlib};
-
-my $distdir = "$perl_vendorlib/auto/share/dist/CPANPLUS-Dist-Debora";
+my $perl_version = $Config{version};
 
 my $has_shared_objects = (@{$package->shared_objects} > 0);
 
