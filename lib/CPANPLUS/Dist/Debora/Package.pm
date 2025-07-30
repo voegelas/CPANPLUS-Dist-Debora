@@ -528,6 +528,7 @@ sub _normalize_version {
     }
 
     $version =~ s{\A v}{}xms;    # Strip "v".
+    $version =~ s/[-_]/~/g;      # Handle release candidates.
 
     return $version;
 }

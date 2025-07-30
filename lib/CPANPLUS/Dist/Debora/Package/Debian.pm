@@ -731,7 +731,7 @@ sub _get_epoch {
 sub _get_version_with_epoch {
     my $self = shift;
 
-    my $version = $self->SUPER::version;
+    my $version = $self->version;
 
     my $epoch = $self->_get_epoch;
     if ($epoch) {
