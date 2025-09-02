@@ -369,7 +369,7 @@ Maintainer: [% $package->packager %]
 Section: perl
 Priority: optional
 Build-Depends: debhelper-compat (= 12)
-Standards-Version: 4.7.0
+Standards-Version: 4.7.2
 Homepage: [% $package->url %]
 
 Package: [% $package->name %]
