@@ -141,7 +141,7 @@ sub install {
     # We always pass "--force" to rpm.  The CPANPLUS option "force" is more
     # annoying than useful and thus not used here.
     my $sudo_cmd    = $self->sudo_cmd;
-    my @install_cmd = ($sudo_cmd, qw(rpm --upgrade --force --verbose));
+    my @install_cmd = ($sudo_cmd, qw(rpm --upgrade --force --verbose --nosignature));
 
     if (is_testing) {
         @install_cmd = qw(rpm -qlvp);
